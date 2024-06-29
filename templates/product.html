@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ product.name }}</h2>
+<img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+<p>{{ product.description }}</p>
+<p>Preço: R$ {{ product.price }}</p>
+<form action="{{ url_for('cart') }}" method="post">
+    <button type="submit">Adicionar ao Carrinho</button>
+</form>
+{% endblock %}
